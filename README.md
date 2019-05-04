@@ -1,12 +1,12 @@
 <h1 align="center">
-  <a href="https://facebook.github.io/react-native/">
+  <a href="https://github.com/M-Shehu/hrsf114-mvp/">
     Sprise Hub
   </a>
 </h1>
 
-<p align="center">
+<h3 align="center">
   Sugar, <strong>Sprise</strong> & Everything Nice
-</p>
+</h3>
 
 <p align="center">
   <a href="https://github.com/M-Shehu/hrsf114-mvp/master/LICENSE">
@@ -14,7 +14,7 @@
   </a>
 
   <a href="https://circleci.com/gh/M-Shehu/hrsf114-mvp">
-    <img src="https://circleci.com/gh/M-Shehu/hrsf114-mvp.svg?style=svg?circle-token=$CIRCLE_TOKEN" alt="Current CircleCI build status." />
+    <img src="https://circleci.com/gh/M-Shehu/hrsf114-mvp.svg?style=svg&circle-token=f0d84fe56333f3f242b7700d4121087634a78a52" alt="Current CircleCI build status." />
   </a>
   
   <a href="https://twitter.com/intent/follow?screen_name=sprisehub">
@@ -33,7 +33,7 @@
 
 ## 🤔 What is Sprise Hub? ##
 Glad you asked! Have you ever faced either of these 3 dilemmas?
-- How do I give someone a memoriable surprise?
+- How do I give someone a memorable surprise?
 - How can I make a walk or run more interesting?
 - How can I get random tips and tricks from complete strangers?
 
@@ -54,11 +54,31 @@ Go to www.sprisehub.com and sign up. It's as easy as a shake to use from there o
 ## 👥 Can I Clone Sprise Hub and Check It Out? ##
 Definitely! The project is open source and *SPOILER ALERT* you can contribute to the project as well. Check the next section on how to do so. 
 
+### Usage
+Run the following command to run the code in development mode. Don't worry, it runs all necessary scripts in this one command.
+
+```sh
+npm run start:dev
+```
+
+
+Run the following command if you just want to see the code run on your computer's browser
+```sh
+npm start
+```
+
+### Tech Stack
+
+Built using Node, Express, React with Redux, PostgreSQL, Firebase, GraphQL, React-Router and Redis.
+
+Deployment: Docker, AWS EC2, AWS Lambda.
+Testing: CircleCI, Jest.
+
+APIs: Google MAP API.
+
+
 ## 🧑‍🤝‍🧑 Can I Contribute To The Project? ##
 In true spirit of what this app stands for, you will be sent to yet another section to see how to contribute. See [CONTRIBUTING.md](CONTRIBUTING.md) for contribution guidelines.
-
-## 🧑‍🤝‍🧑 Contributing
-See [CONTRIBUTING.md](CONTRIBUTING.md) for contribution guidelines.
 
 ## 📄 License
 
