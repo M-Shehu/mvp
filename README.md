@@ -12,7 +12,9 @@
   <a href="https://github.com/M-Shehu/hrsf114-mvp/master/LICENSE">
     <img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="Sprise Hub is released under the MIT license." />
   </a>
-  [![CircleCI](https://circleci.com/gh/M-Shehu/hrsf114-mvp.svg?style=svg)](https://circleci.com/gh/M-Shehu/hrsf114-mvp)
+  <a href="https://circleci.com/gh/M-Shehu/hrsf114-mvp">
+    <img src="https://circleci.com/gh/M-Shehu/hrsf114-mvp.svg?style=svg" alt="Current CircleCI build status." />
+  </a>
   <a href="https://twitter.com/intent/follow?screen_name=sprisehub">
     <img src="https://img.shields.io/twitter/follow/sprisehub.svg?label=Follow%20@sprisehub" alt="Follow @sprisehub" />
   </a>
