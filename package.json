@@ -1,0 +1,46 @@
+{
+  "name": "hrsf114-mvp",
+  "version": "1.0.0",
+  "description": "Sprise Hub",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon server/index.js",
+    "build": "webpack --mode development",
+    "build:watch": "webpack --mode development --watch",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/M-Shehu/hrsf114-mvp.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/M-Shehu/hrsf114-mvp/issues"
+  },
+  "homepage": "https://github.com/M-Shehu/hrsf114-mvp#readme",
+  "dependencies": {
+    "@babel/polyfill": "^7.4.4",
+    "axios": "^0.18.0",
+    "cors": "^2.8.5",
+    "express": "^4.16.4",
+    "express-graphql": "^0.8.0",
+    "graphql": "^14.2.1",
+    "morgan": "^1.9.1",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "redux": "^4.0.1"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.4.4",
+    "@babel/core": "^7.4.4",
+    "@babel/plugin-transform-regenerator": "^7.4.4",
+    "@babel/preset-env": "^7.4.4",
+    "@babel/preset-react": "^7.0.0",
+    "babel-loader": "^8.0.5",
+    "nodemon": "^1.19.0",
+    "webpack": "^4.30.0",
+    "webpack-cli": "^3.3.1"
+  }
+}
