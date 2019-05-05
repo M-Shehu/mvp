@@ -1,3 +1,9 @@
+<p align="center">
+  <a href="http://sprisehub.com/">
+    <img alt="sprise-hub" src="https://s3.amazonaws.com/sprisehub.com/Sprise-144x144.png" width="144">
+  </a>
+</p>
+
 <h1 align="center">
   <a href="https://github.com/M-Shehu/hrsf114-mvp/">
     Sprise Hub
