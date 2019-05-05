@@ -1,10 +1,12 @@
 const path = require('path');
+const nodeExternals = require('webpack-node-externals');
 
 const SRC_DIR = path.join(__dirname, '/client/src');
 const DIST_DIR = path.join(__dirname, '/public/dist');
+const SVR_DIR = path.join(__dirname, '/server/index.js');
 
-module.exports = {
-  entry: ["@babel/polyfill", `${SRC_DIR}/index.jsx`],
+const browserConfig = {
+  entry: ['@babel/polyfill', `${SRC_DIR}/index.jsx`],
   output: {
     filename: 'spriseBundle.js',
     path: DIST_DIR,
@@ -44,7 +46,36 @@ module.exports = {
           }
         ]
       },
-    ],
+    ], plugins: [
+      new webpack.DefinePlugin({
+        __isBrowser__: 'true'
+      })
+    ]
   },
-  resolve: {extensions: ['.js','.jsx']}
+  resolve: {extensions: ['.js', '.jsx']}
 };
+
+const serverConfig = {
+  entry: SVR_DIR,
+  target: 'node',
+  externals: [nodeExternals()],
+  output: {
+    path: __dirname,
+    filename: 'server.js',
+    publicPath: '/'
+  },
+  module: {
+    rules: [
+      { test: /\.(js)$/, use: 'babel-loader' }
+    ]
+  },
+  plugins: [
+    new webpack.DefinePlugin({
+      __isBrowser__: 'false'
+    })
+  ]
+};
+
+
+module.exports = [browserConfig, serverConfig];
+
