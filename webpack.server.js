@@ -12,8 +12,13 @@ const config = {
   module: {
     rules: [
       {
-        test: /firebase/,
-        use: ['null-loader']
+        test: /npm\.js$/,
+        loader: 'string-replace-loader',
+        include: path.resolve('node_modules/firebase/dist'),
+        options: {
+          search: 'require(\'firebase/app\');',
+          replace: 'require(\'firebase/app\').default;',
+        },
       },
     ],
   },
