@@ -4,6 +4,7 @@ import LandingPage from '../components/Landing.jsx';
 import AccountPage from '../components/Account.jsx';
 import HomePage from '../components/Home.jsx';
 import PasswordForgetPage from '../components/PasswordForget.jsx';
+import SprisePage from '../components/Sprise.jsx';
 import * as ROUTES from './routes.js';
 
 const routes = [
@@ -35,6 +36,11 @@ const routes = [
   {
     component: AccountPage,
     path: ROUTES.ACCOUNT,
+    exact: true
+  },
+  {
+    component: SprisePage,
+    path: ROUTES.SPRISE,
     exact: true
   },
 ]
