@@ -9,8 +9,17 @@ const config = {
     filename: 'server.js',
     path: path.resolve(__dirname, 'server/build'),
   },
+  module: {
+    rules: [
+      {
+        test: /firebase/,
+        use: ['null-loader']
+      },
+    ],
+  },
   resolve: {
-    extensions: ['.mjs', '.js', '.json']
+    extensions: ['.mjs', '.js', '.json'],
+    mainFields: ['main']
   },
 };
 

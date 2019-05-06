@@ -3,6 +3,8 @@ const path = require('path');
 const merge = require('webpack-merge');
 const baseConfig = require('./webpack.base.js');
 
+const Dotenv = require('dotenv-webpack');
+
 const config = {
   context: __dirname,
   entry: ['./client/src/index.jsx'],
@@ -18,6 +20,9 @@ const config = {
   optimization: {
     minimize: true
   },
+  plugins: [
+    new Dotenv()
+  ],
 };
 
 module.exports = merge(baseConfig, config);
