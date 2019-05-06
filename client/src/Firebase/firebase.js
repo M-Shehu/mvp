@@ -3,13 +3,13 @@ import 'firebase/auth';
 import 'firebase/database';
 
 const firebaseConfig = {
-  apiKey: 'AIzaSyCQAOtmTQVgIsV-bp499oNZCwLKqdYBHk8',
-  authDomain: 'sprisehub.firebaseapp.com',
-  databaseURL: 'https://sprisehub.firebaseio.com',
-  projectId: 'sprisehub',
-  storageBucket: 'sprisehub.appspot.com',
-  messagingSenderId: '959587122862',
-  appId: '1:959587122862:web:9e60433324ca0e3c'
+  apiKey: process.env.API_KEY,
+  authDomain: process.env.AUTH_DOMAIN,
+  databaseURL: process.env.AUTH_DOMAIN,
+  projectId: process.env.PROJECT_ID,
+  storageBucket: process.env.STORAGE_BUCKET,
+  messagingSenderId: process.env.MESSAGING_SENDER_ID,
+  appId: process.env.APP_ID
 };
 
 
@@ -39,6 +39,12 @@ class Firebase {
   // *** User API ***
 
   user = uid => this.db.ref(`users/${uid}`);
+
+  users = () => this.db.ref('users');
+
+  // *** Database API ***
+
+  sprise = uid => this.db.ref(`sprises/${uid}`);
 
   users = () => this.db.ref('users');
 };
