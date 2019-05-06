@@ -18,7 +18,8 @@ const {fetch, Request, Response, Headers} = fetchPonyfill('Promise');
 
 app.use(cors());
 app.use(morgan('tiny'));
-app.use(express.static('public/dist'));
+
+app.get('/spriseBundle.js', (req, res) => res.sendFile('/Users/muhammadshehu/Desktop/SHEHU/Hack_Reactor/MVP/hrsf114-mvp/public/dist/spriseBundle.js'));
 
 app.get('*', (req, res) => {
   const result = renderer(req);
