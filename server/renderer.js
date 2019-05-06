@@ -27,7 +27,7 @@ function renderer(req) {
 
     <body>
       <div id="app">${content}</div>
-      <script src="./spriseBundle.js"></script>
+      <script src="/spriseBundle.js"></script>
     </body>
     </html>`;
 
