@@ -1,25 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter as Router } from 'react-router-dom';
-import { renderRoutes } from 'react-router-config';
-import Login from './components/Login.jsx';
-import routes from '../../server/routes.js';
+import Firebase, { FirebaseContext } from './Firebase';
+import App from './components/App.jsx';
 
-import { Provider } from 'react-redux';
-
-// import createStore from './store/createStore';
-
-// const store = createStore(window.STORE_DATA);
 
 const jsx = (
-  <Provider>
-    <Router>
-      <div class="wrapper">
-        {renderRoutes(routes)}
-      </div>
-    </Router>
-  </Provider>
+  <FirebaseContext.Provider value={new Firebase()}>
+    <App />
+  </FirebaseContext.Provider>
 );
 
 
-ReactDOM.hydrate(<Login />, document.getElementById("app"));
+ReactDOM.hydrate(jsx, document.getElementById("app"));
