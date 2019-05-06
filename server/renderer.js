@@ -4,16 +4,16 @@ import { StaticRouter as Router } from 'react-router-dom';
 import { renderRoutes } from 'react-router-config';
 import Login from '../client/src/components/Login.jsx';
 
-import routes from './routes.js';
+import routes from '../client/src/constants/routesHandler.js';
 
 function renderer(req) {
 
   const context = {};
-  const state = store.getState();
+  // const state = store.getState();
 
   const content = renderToString(
       <Router context={context} location={req.path} query={req.query}>
-          <div>{renderRoutes(routes)}</div>
+          <div className="wrapper">{renderRoutes(routes)}</div>
       </Router>
   );
 
