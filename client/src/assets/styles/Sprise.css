@@ -1,0 +1,53 @@
+.column {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  flex-flow: column;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  justify-items: center;
+  text-align: center;
+  color: white;
+  font-size: 50px;
+}
+
+.column1 {
+  background-color: rgb(64, 64, 114);
+}
+
+.column2 {
+  background-color: pink;
+}
+
+.column3 {
+  background-color: orange;
+}
+
+.column4 {
+  background-color: lightblue;
+  color: black;
+}
+
+.sprises {
+  color: black;
+  display: flex;
+  width: 100%;
+}
+
+.sprise-container {
+  color: black;
+  display: flex;
+  width: 60%;
+  align-content: space-between;
+}
+
+.span-3 {
+  flex: 1 1 60%;
+  display: inline-block;
+}
+
+.span-1 {
+  flex: 1 1 20%;
+  display: inline-block;
+}

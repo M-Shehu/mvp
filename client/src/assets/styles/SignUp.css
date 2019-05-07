@@ -1,0 +1,12 @@
+.signInput {
+  display: block;
+  border: none;
+  margin: 30px 0;
+  font-size: 20px;
+  border-bottom: 2px solid rgba(15, 116, 211, 0.3);
+  width: 80%;
+}
+
+form {
+  margin: 30px;
+}
