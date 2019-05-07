@@ -6,6 +6,7 @@ import HomePage from '../components/Home.jsx';
 import PasswordForgetPage from '../components/PasswordForget.jsx';
 import SprisePage from '../components/Sprise.jsx';
 import * as ROUTES from './routes.js';
+import InstaSprisePage from '../components/InstaSprise.jsx';
 
 const routes = [
   {
@@ -43,6 +44,11 @@ const routes = [
     path: ROUTES.SPRISE,
     exact: true
   },
+  {
+    component: InstaSprisePage,
+    path: ROUTES.INSTA_SPRISE,
+    exact: true
+  }
 ]
 
 export default routes;
