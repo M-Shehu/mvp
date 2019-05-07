@@ -6,15 +6,17 @@ mongoose.Promise = global.Promise;
 
 const spriseSchema = new mongoose.Schema({
   userId: String,
+  sprisee: String,
   message1: String,
   message2: String,
   message3: String,
   lastMessage: String,
+  occassion: String,
   surprises: [{
     surprise: String,
-    time: Date
+    time: String
   }],
-  phoneNumber: Number
+  phoneNumber: Number,
 }, 
 {
   timestamps: true
