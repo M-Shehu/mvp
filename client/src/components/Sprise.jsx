@@ -1,16 +1,26 @@
 import React from 'react';
 import axios from 'axios';
+import Navigation from './Navigation.jsx';
+import SpriseStyle from '../assets/styles/Sprise.css'
 
+const Time = (props) => (
+  <div className="sprise-container">
+    <span className="span-3">{props.surprise}</span>
+    <span className="span-1">{props.time}</span>
+  </div>
+)
 class SprisePage extends React.Component {
   constructor(props){
     super(props);
 
     this.state = {
+      sprisee: '',
       message1: '',
       message2: '',
       message3: '',
       lastMessage: '',
-      surprises: ''
+      surprises: [],
+      occassion: ''
     }
   }
 
@@ -22,8 +32,9 @@ class SprisePage extends React.Component {
   retrieveSprise(id) {
     axios.get(`/api/sprisedirect/${id}`)
     .then(response => {
-      console.log(response.data);
       this.setState({
+        sprisee: response.data.sprisee,
+        occassion: response.data.occassion,
         message1: response.data.message1,
         message2: response.data.message2,
         message3: response.data.message3,
@@ -34,16 +45,29 @@ class SprisePage extends React.Component {
   }
 
   render() {
-    const { message1, message2, message3, lastMessage, surprises } = this.state;
+    const { sprisee, message1, message2, occassion, message3, lastMessage, surprises } = this.state;
     return (
       <div>
-        <h1>This is a Specialised Sprise</h1>
-        <p>Welcome. This is for you!</p>
-        <div>{message1}</div>
-        <div>{message2}</div>
-        <div>{message3}</div>
-        <div>{lastMessage}</div>
-        {/* <div>{surprises}</div> */}
+        <Navigation />
+        <div className="column1 column">
+          Happy {occassion} <strong>{sprisee}!!!</strong>
+          <img src="/sprise-background" height="270px"></img>
+        </div>
+        <div className="column2 column">
+          {message1}
+        </div>
+        <div className="column3 column">
+          {message2}
+        </div>
+        <div className="column4 column">
+          {message3}
+        </div>
+        <div className="sprises column">
+          <h3>Sprises</h3>
+          {surprises.map(element => (
+            <Time surprise={element.surprise} time={element.time} />
+          ))}
+        </div>
       </div>
     )
   }

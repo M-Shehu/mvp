@@ -6,13 +6,13 @@ import { SignUpLink } from './SignUp.jsx';
 import { PasswordForgetLink } from './PasswordForget.jsx';
 import { withFirebase } from '../Firebase';
 import * as ROUTES from '../constants/routes';
+import Navigation from './Navigation.jsx';
+import SignUpStyle from '../assets/styles/SignUp.css';
 
 const SignInPage = () => (
   <div>
-    <h1>SignIn</h1>
+    <Navigation />
     <SignInForm />
-    <PasswordForgetLink />
-    <SignUpLink />
   </div>
 );
 
@@ -56,7 +56,9 @@ class SignInFormBase extends Component {
 
     return (
       <form onSubmit={this.onSubmit}>
+        <h1 style={{color:'rgb(15, 116, 211)'}}>Welcome Back</h1>
         <input
+          className="signInput"
           name="email"
           value={email}
           onChange={this.onChange}
@@ -64,17 +66,20 @@ class SignInFormBase extends Component {
           placeholder="Email Address"
         />
         <input
+          className="signInput"
           name="password"
           value={password}
           onChange={this.onChange}
           type="password"
           placeholder="Password"
         />
-        <button disabled={isInvalid} type="submit">
+        <button className="btn btn-primary" disabled={isInvalid} type="submit">
           Sign In
         </button>
 
         {error && <p>{error.message}</p>}
+        <PasswordForgetLink />
+        <SignUpLink />
       </form>
     );
   }
