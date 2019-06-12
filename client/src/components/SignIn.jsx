@@ -6,6 +6,7 @@ import { SignUpLink } from './SignUp.jsx';
 import { PasswordForgetLink } from './PasswordForget.jsx';
 import { withFirebase } from '../Firebase';
 import * as ROUTES from '../constants/routes';
+<<<<<<< HEAD
 
 const SignInPage = () => (
   <div>
@@ -13,6 +14,15 @@ const SignInPage = () => (
     <SignInForm />
     <PasswordForgetLink />
     <SignUpLink />
+=======
+import Navigation from './Navigation.jsx';
+import SignUpStyle from '../assets/styles/SignUp.css';
+
+const SignInPage = () => (
+  <div>
+    <Navigation />
+    <SignInForm />
+>>>>>>> ad1de51fe794463c1d36478fd2354d75430cf129
   </div>
 );
 
@@ -56,7 +66,9 @@ class SignInFormBase extends Component {
 
     return (
       <form onSubmit={this.onSubmit}>
+        <h1 style={{color:'rgb(15, 116, 211)'}}>Welcome Back</h1>
         <input
+          className="signInput"
           name="email"
           value={email}
           onChange={this.onChange}
@@ -64,17 +76,30 @@ class SignInFormBase extends Component {
           placeholder="Email Address"
         />
         <input
+<<<<<<< HEAD
+=======
+          className="signInput"
+>>>>>>> ad1de51fe794463c1d36478fd2354d75430cf129
           name="password"
           value={password}
           onChange={this.onChange}
           type="password"
           placeholder="Password"
         />
+<<<<<<< HEAD
         <button disabled={isInvalid} type="submit">
+=======
+        <button className="btn btn-primary" disabled={isInvalid} type="submit">
+>>>>>>> ad1de51fe794463c1d36478fd2354d75430cf129
           Sign In
         </button>
 
         {error && <p>{error.message}</p>}
+<<<<<<< HEAD
+=======
+        <PasswordForgetLink />
+        <SignUpLink />
+>>>>>>> ad1de51fe794463c1d36478fd2354d75430cf129
       </form>
     );
   }

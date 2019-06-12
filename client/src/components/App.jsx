@@ -4,6 +4,7 @@ import { AuthUserContext, withAuthentication } from '../Session';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { renderRoutes } from 'react-router-config';
 import routes from '../constants/routesHandler';
+import GlobalStyle from '../assets/styles/GlobalStyle.css';
 
 class App extends React.Component{
   constructor(props) {

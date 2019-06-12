@@ -4,10 +4,12 @@ import { compose } from 'recompose';
 
 import { withFirebase } from '../Firebase';
 import * as ROUTES from '../constants/routes';
+import Navigation from './Navigation.jsx';
+import SignUpStyle from '../assets/styles/SignUp.css';
 
 const SignUpPage = () => (
   <div>
-    <h1>SignUp</h1>
+    <Navigation />
     <SignUpForm />
   </div>
 );
@@ -19,6 +21,12 @@ const INITIAL_STATE = {
   passwordTwo: '',
   error: null,
 };
+
+const SignInLink = () => (
+  <p>
+    Already have an account? <Link to={ROUTES.SIGN_IN}>Sign In Instead!</Link>
+  </p>
+);
 
 class SignUpFormBase extends Component {
   constructor(props) {
@@ -75,7 +83,9 @@ class SignUpFormBase extends Component {
 
     return (
       <form onSubmit={(e) => this.onSubmit(e)}>
+        <h1 style={{color:'rgb(15, 116, 211)'}}>Shall We Swing?</h1>
         <input
+          className="signInput"
           name="username"
           value={username}
           onChange={this.onChange}
@@ -83,6 +93,7 @@ class SignUpFormBase extends Component {
           placeholder="Full Name"
         />
         <input
+          className="signInput"
           name="email"
           value={email}
           onChange={this.onChange}
@@ -90,6 +101,7 @@ class SignUpFormBase extends Component {
           placeholder="Email Address"
         />
         <input
+          className="signInput"
           name="passwordOne"
           value={passwordOne}
           onChange={this.onChange}
@@ -97,15 +109,17 @@ class SignUpFormBase extends Component {
           placeholder="Password"
         />
         <input
+          className="signInput"
           name="passwordTwo"
           value={passwordTwo}
           onChange={this.onChange}
           type="password"
           placeholder="Confirm Password"
         />
-        <button disabled={isInvalid} type="submit">Sign Up</button>
+        <button disabled={isInvalid} type="submit" className="btn btn-primary">Sign Up</button>
 
         {error && <p>{error.message}</p>}
+        <SignInLink />
       </form>
     );
   }
@@ -116,6 +130,8 @@ const SignUpLink = () => (
     Don't have an account? <Link to={ROUTES.SIGN_UP}>Sign Up</Link>
   </p>
 );
+
+
 
 const SignUpForm = compose(
   withRouter,
