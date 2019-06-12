@@ -1,0 +1,59 @@
+.nav-bar {
+  height: auto;
+  margin: -10px;
+  margin-left: -10px;
+  margin-right: -10px;
+  margin-bottom: 0px;
+  display: flex;
+  background: rgb(64, 64, 114);
+  -webkit-box-shadow: 0 7px 15px rgba(14, 14, 14, 0.25), 0 7px 5px rgba(20, 20, 20, 0.1);
+  box-shadow: 0 7px 15px rgba(14, 14, 14, 0.25), 0 7px 5px rgba(20, 20, 20, 0.1);
+  z-index: 9999;
+  justify-content: space-between;
+}
+
+.nav-img {
+  padding: 25px;
+  
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: rgb(64, 64, 114);
+}
+
+li {
+  float: right;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  justify-items: center;
+}
+
+li a {
+  display: block;
+  color: white;
+  border-right: 1px solid rgba(255, 255, 255, 0.2);
+  height: 100%;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  justify-items: center;
+}
+
+/* Change the link color to #111 (black) on hover */
+li a:hover {
+  background-color: rgb(33, 33, 61);
+  -moz-box-shadow:    inset 0 0 50px rgba(20, 20, 20, 0.4);
+  -webkit-box-shadow: inset 0 0 50px rgba(20, 20, 20, 0.4);
+  box-shadow:         inset 0 0 50px rgba(20, 20, 20, 0.4);
+}
