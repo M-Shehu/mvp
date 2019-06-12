@@ -90,4 +90,4 @@ In true spirit of what this app stands for, you will be sent to yet another sect
 
 Sprise Hub is MIT licensed, as found in the [LICENSE][l] file.
 
-[l]: https://github.com/M-Shehu/hrsf114-mvp/master/LICENSE
+[l]: https://github.com/M-Shehu/sprisehub/master/LICENSE
