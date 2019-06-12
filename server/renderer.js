@@ -2,7 +2,6 @@ import React from 'react';
 import { renderToString } from 'react-dom/server';
 import { StaticRouter as Router } from 'react-router-dom';
 import { renderRoutes } from 'react-router-config';
-import Login from '../client/src/components/Login.jsx';
 
 import routes from '../client/src/constants/routesHandler.js';
 
@@ -22,6 +21,8 @@ function renderer(req) {
     <html>
     <head>
       <meta charset="utf-8">
+      <link rel = "stylesheet" type = "text/css" href = "/main.css" />
+      <link href="https://fonts.googleapis.com/css?family=Montserrat:100,300,400,500" rel="stylesheet">
       <meta name="viewport" content="width=device-width, initial-scale=1">
     </head>
 
