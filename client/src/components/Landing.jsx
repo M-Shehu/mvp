@@ -1,9 +1,9 @@
 import React from 'react';
-import LandingPageStyle from '../assets/styles/LandingPage.css';
 import { withAuthorization } from '../Session';
 import { Link, withRouter } from 'react-router-dom';
 import Navigation from './Navigation.jsx';
 import * as ROUTES from '../constants/routes';
+import '../assets/styles/LandingPage.css';
 
 const LandingPage = () => (
   <div className="landing-page">
