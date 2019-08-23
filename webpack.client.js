@@ -4,7 +4,7 @@ const merge = require('webpack-merge');
 const baseConfig = require('./webpack.base.js');
 
 const SRC_DIR = path.join(__dirname, '/client/src');
-const DIST_DIR = path.join(__dirname, '/public/dist');
+const DIST_DIR = path.join(__dirname, '/public');
 const SVR_DIR = path.join(__dirname, '/server/index.js');
 const Dotenv = require('dotenv-webpack');
 
@@ -49,7 +49,7 @@ const config = {
     ]
   },
   output: {
-    path: path.join(__dirname, 'public/dist'),
+    path: path.join(__dirname, 'public'),
     filename: 'spriseBundle.js',
     publicPath: '/',
     pathinfo: false,
@@ -63,6 +63,12 @@ const config = {
   plugins: [
     new Dotenv()
   ],
+  resolve: {extensions: ['.js', '.jsx']},
+  devServer: {
+    contentBase: DIST_DIR,
+    compress: true,
+    port: 9000
+  }
 };
 
 module.exports = merge(baseConfig, config);
