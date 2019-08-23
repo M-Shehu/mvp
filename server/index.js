@@ -14,7 +14,7 @@ import { buildSchema } from 'graphql';
 import renderer from './renderer.js';
 import Sprises from '../database/Sprise.js';
 import InstaSprises from '../database/InstaSprise.js';
-import db from '../database/index.js';
+// import db from '../database/index.js';
 
 const app = express();
 app.use( bodyParser.json() ); 
