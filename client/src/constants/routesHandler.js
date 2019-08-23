@@ -1,12 +1,12 @@
-import SignUpPage from '../components/SignUp.jsx';
-import SignInPage from '../components/SignIn.jsx';
-import LandingPage from '../components/Landing.jsx';
-import AccountPage from '../components/Account.jsx';
-import HomePage from '../components/Home.jsx';
-import PasswordForgetPage from '../components/PasswordForget.jsx';
-import SprisePage from '../components/Sprise.jsx';
+import SignUpPage from '../pages/Authentication/SignUp.jsx';
+import SignInPage from '../pages/Authentication/SignIn.jsx';
+import LandingPage from '../pages/Landing.jsx';
+import AccountPage from '../pages/Account.jsx';
+import HomePage from '../pages/Home.jsx';
+import PasswordForgetPage from '../pages/Authentication/PasswordForget.jsx';
+import SprisePage from '../pages/Sprise.jsx';
 import * as ROUTES from './routes.js';
-import InstaSprisePage from '../components/InstaSprise.jsx';
+import InstaSprisePage from '../pages/InstaSprise.jsx';
 
 const routes = [
   {
