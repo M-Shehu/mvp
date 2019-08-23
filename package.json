@@ -8,6 +8,7 @@
     "build": "webpack --mode development",
     "build:server": "webpack --watch --config webpack.server.js --mode development",
     "build:client": "webpack --watch --config webpack.client.js --mode development",
+    "dev:watch": "webpack-dev-server --config webpack.client.js --mode development",
     "build:watch": "webpack --mode development --watch",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -42,6 +43,7 @@
     "morgan": "^1.9.1",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
+    "react-lottie": "^1.2.3",
     "react-redux": "^7.0.3",
     "react-router": "^5.0.0",
     "react-router-config": "^5.0.0",
@@ -63,12 +65,15 @@
     "babel-plugin-import-graphql": "^2.7.0",
     "css-loader": "^2.1.1",
     "dotenv": "^8.0.0",
+    "file-loader": "^4.0.0",
     "nodemon": "^1.19.0",
     "null-loader": "^1.0.0",
     "recompose": "^0.30.0",
     "style-loader": "^0.23.1",
+    "url-loader": "^2.0.1",
     "webpack": "^4.30.0",
     "webpack-cli": "^3.3.1",
+    "webpack-dev-server": "^3.7.2",
     "webpack-merge": "^4.2.1",
     "webpack-node-externals": "^1.7.2"
   }
