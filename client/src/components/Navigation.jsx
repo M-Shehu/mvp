@@ -1,5 +1,7 @@
 import React from 'react';
-import NavigationStyle from '../assets/styles/Navigation.css';
+import SpriseLogoWhite from '../assets/logos/Sprise-hollow-white.png';
+import '../assets/styles/Navigation.css';
+import ErrorBoundary from './ErrorBoundary.jsx';
 
 const Navigation = (props) => {
   let Content = () => {
@@ -40,15 +42,22 @@ const Navigation = (props) => {
     )
   }
 
-  return (<div className="nav-bar">
-    <a href='/'>
-      <img className="nav-img" src="/nav-img" height="50px"></img>
-    </a>
-    <ul>
-      <Content />
-    </ul>
-  </div>)
-
+  return (
+    <div className="nav-bar">
+      <a href='/'>
+        <img className="nav-img" src={SpriseLogoWhite} height="50px"></img>
+      </a>
+      <ul>
+        <Content />
+      </ul>
+    </div>
+  )
 };
 
-export default Navigation;
+const ErrorCaughtNav = () => (
+  <ErrorBoundary>
+    <Navigation />
+  </ErrorBoundary>
+)
+
+export default ErrorCaughtNav;
