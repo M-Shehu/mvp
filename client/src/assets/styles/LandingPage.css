@@ -101,25 +101,28 @@ body {
 	background-color: #154D9E;
 	overflow-x: hidden;
 }
-#discover {
-    font-family: "Ilisarniq Regular";
-    color: rgba(255, 255, 255, 0.8);;
-    font-size: 12px;
-    transition: all .5s cubic-bezier(.68,-.55,.265,1.5);
-    text-decoration: none;
-    margin-left: 20px;
-    display: inline-block;
+#login {
+  margin: 0;
+  background-color: transparent;
+  border: 0;
+  font-family: "Ilisarniq Regular";
+  color: rgba(255, 255, 255, 0.8);;
+  font-size: 12px;
+  transition: all .5s cubic-bezier(.68,-.55,.265,1.5);
+  text-decoration: none;
+  margin-left: 20px;
+  display: inline-block;
 }
-#discover span, #here {
-    color: #FFF;
-    font-family: "Ilisarniq Bold";
-    position: relative;
-    transition: all .5s cubic-bezier(.68,-.55,.265,1.5);
+#login span, #here {
+  color: #FFF;
+  font-family: "Ilisarniq Bold";
+  position: relative;
+  transition: all .5s cubic-bezier(.68,-.55,.265,1.5);
 }
-#discover span:hover, #sticky:hover #here {
+#login span:hover, #sticky:hover #here {
     opacity: .5;
 }
-#discover span:after, #here:after{
+#login span:after, #here:after{
     content: "";
 	height: 1.5px;
 	width: 100%;
@@ -130,15 +133,15 @@ body {
 	background-color: #FFF;
 	transition: all .5s cubic-bezier(.68,-.55,.265,1.5);
 }
-#discover span:hover:after #sticky:hover #here:after {
+#login span:hover:after #sticky:hover #here:after {
     bottom: -7px;
 }
 #containback {
 	position: absolute;
-	right: 50px;
-	top: 300px;
+	right: 10%;
+	top: 180px;
 	overflow: hidden;
-	height: 50%;
+  height: 60%;
 	z-index: -99999;
 }
 
@@ -156,6 +159,11 @@ body {
   vertical-align: middle;
   padding-left: 5vw;
 }
+
+#main-banner {
+  height: 25%;
+}
+
 h1 {
 	font-family: "Playfair Display";
 	color: #FFF;
@@ -172,7 +180,7 @@ h2 {
 	width: 30%;
 	line-height: 30px;
 }
-#start {
+#signup {
 	background-color: #F3227A;
 	color: #FFF!important;
 	font-family: "Ilisarniq Bold";
@@ -247,9 +255,9 @@ color: red!important;
 .selected2 {
     background-color: #FFF!important;
 }
-button {
+#signup {
 	background-color: #F3227A;
-	width: 400px;
+	width: 200px;
 	margin-left: auto;
 	margin-right: auto;
 	border: none;
@@ -271,8 +279,8 @@ button {
 .errorfield {
     border: 2px solid #F3227A;
 }
-button:hover {
-    width: 450px;
+#signup:hover {
+    width: 250px;
 }
 form {
 	margin-top: 50px;
@@ -738,12 +746,18 @@ form {
     #landing {
         padding-left: 0px!important;
     }
-    #start {
-        display: block;
-        margin-left: auto;
-    margin-right: auto;
+    #signup {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
     }
-    #discover {
+    #containback {
+      right: 0;
+      left: 50%;
+      width: 90%;
+      transform: translate(-50%, 0);
+    }
+    #login {
         display: block;
         margin-left: auto;
         margin-top: 20px;
@@ -827,9 +841,6 @@ form {
     h1 {
         font-size: 30px;
         margin-top: 40px;
-    }
-    #logo img {
-        width: 40px;
     }
 }
 @media only screen and (max-width: 719px) {
