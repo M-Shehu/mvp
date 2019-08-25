@@ -3,8 +3,8 @@ const merge = require('webpack-merge');
 const baseConfig = require('./webpack.base.js');
 
 const SRC_DIR = path.join(__dirname, '/client/src');
-const DIST_DIR = path.join(__dirname, '/public/dist');
-const SVR_DIR = path.join(__dirname, '/server/index.js');
+// const DIST_DIR = path.join(__dirname, '/public/dist');
+// const SVR_DIR = path.join(__dirname, '/server/index.js');
 
 const config = {
   target: 'node',
