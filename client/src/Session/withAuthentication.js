@@ -1,3 +1,5 @@
+/* eslint-disable no-unused-expressions */
+/* eslint-disable react/jsx-props-no-spreading */
 import React from 'react';
 
 import AuthUserContext from './context';
@@ -14,7 +16,8 @@ const withAuthentication = Component => {
     }
 
     componentDidMount() {
-      this.listener = this.props.firebase.auth.onAuthStateChanged(
+      const { firebase:{auth} } = this.props;
+      this.listener = auth.onAuthStateChanged(
         authUser => {
           authUser
             ? this.setState({ authUser })
@@ -28,8 +31,9 @@ const withAuthentication = Component => {
     }
 
     render() {
+      const { authUser } = this.state;
       return (
-        <AuthUserContext.Provider value={this.state.authUser}>
+        <AuthUserContext.Provider value={authUser}>
           <Component {...this.props} />
         </AuthUserContext.Provider>
       );
