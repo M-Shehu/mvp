@@ -1,12 +1,13 @@
 const webpack = require('webpack');
 const path = require('path');
 const merge = require('webpack-merge');
-const baseConfig = require('./webpack.base.js');
+const Dotenv = require('dotenv-webpack');
+
+const baseConfig = require('./webpack/webpack.base.js');
 
 const SRC_DIR = path.join(__dirname, '/client/src');
 const DIST_DIR = path.join(__dirname, '/public');
-const SVR_DIR = path.join(__dirname, '/server/index.js');
-const Dotenv = require('dotenv-webpack');
+// const SVR_DIR = path.join(__dirname, '/server/index.js');
 
 const config = {
   context: __dirname,
@@ -55,7 +56,7 @@ const config = {
     pathinfo: false,
   },
   resolve: {
-    extensions: ['.js', '.json', '.scss']
+    extensions: ['.js', '.json', '.scss', '.jsx']
   },
   optimization: {
     minimize: true
@@ -63,11 +64,11 @@ const config = {
   plugins: [
     new Dotenv()
   ],
-  resolve: {extensions: ['.js', '.jsx']},
   devServer: {
     contentBase: DIST_DIR,
     compress: true,
-    port: 9000
+    port: 9000,
+    historyApiFallback: true
   }
 };
 
