@@ -13,6 +13,22 @@
   justify-items: center;
 }
 
+.axis-center {
+  align-items: center;
+}
+
+.main-center {
+  justify-content: center;
+}
+
+.main-spread-between {
+  justify-content: space-around
+}
+
+.axis-spread-between {
+  align-content: space-around
+}
+
 .call-to-action {
   font-size: 30px;
   text-align: center;
@@ -77,4 +93,206 @@
 
 .select-items div:hover, .same-as-selected {
   background-color: rgba(0, 0, 0, 0.1);
+}
+
+.page h2 {
+  font-size: 2rem;
+  width: auto;
+  margin: 0;
+  opacity: 1;
+}
+
+.page h3 {
+  font-size: 0.9rem;
+  font-weight: 100;
+  color: #FFF;
+  line-height: 1.4rem;
+  width: 80%;
+  opacity: 0.6;
+  font-style: italic;
+}
+
+.first-half {
+  flex: 1 1 30%;
+}
+
+.second-half {
+  flex: 1 1 35%;
+}
+
+.page input {
+  width: 100%;
+}
+
+.page label {
+  width: 100%;
+}
+
+.page p {
+  margin: 0;
+}
+
+.page select {
+  
+  width: 50%;
+  font-family: "Ilisarniq Bold";
+  font-family: "Ilisarniq Regular";
+  font-size: 13px;
+  margin: 10px 0;
+  height: 50px;
+}
+
+.page label span {
+  color: #F3227A;
+}
+
+.generate {
+  border: none;
+	font-family: "Ilisarniq Bold";
+	font-size: 13px;
+  line-height: 17px;
+  padding: 10px 20px;
+	text-align: center;
+	text-decoration: none;
+	display: block;
+	margin-bottom: 35px;
+}
+
+.generate:hover {
+  background-color: rgb(110, 19, 57);
+}
+
+#message {
+  margin-top: 50px;
+}
+
+.textbox {
+  margin: 10px 0;
+  width: 92%;
+  height: 80px;
+  resize: none;
+  border-bottom: 2px solid #F3227A;
+}
+
+.last-section {
+  display: flex;
+  background-color: #011B33;
+  margin: 0 -500px;
+  padding: 0 500px;
+  margin-bottom: -500px;
+}
+
+.last-section label {
+  text-align: center;
+}
+
+#sprise-time {
+  width: 50%;
+}
+
+.sprise {
+  display: inline-block;
+  padding: 5px;
+  width: 25%;
+  height: 80%;
+  align-items: center;
+  justify-content: space-around;
+  margin: 20px;
+  flex-flow: column;
+  background-color: #154D9E;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.sprise h4 {
+  color: #aaa;
+  font-size: 0.8rem;
+  margin: 0;
+  margin-bottom: 4px;
+}
+
+.sprise h5 {
+  color: white;
+  font-size: 1.1rem;
+  margin: 0;
+}
+
+.sprise-name {
+  position: relative;
+  top: 5%;
+}
+
+.sprise-time {
+  position: relative;
+  top: 25%;
+}
+
+.sprise button {
+  position: relative;
+  top: 80px;
+}
+
+
+.sprise-info {
+  position: relative;
+  border-right: 1px solid white; 
+  box-shadow:40px 0 25px -30px rgb(0,0,0); 
+  flex: 1 1 15%;
+}
+
+.sprise-list {
+  height: 70%;
+  overflow: auto;
+  white-space: nowrap;
+}
+
+.white-theme {
+  color: #154D9E;
+  background-color: white;
+}
+
+.pink-theme {
+  background-color: #F3227A;
+  color: #FFF;
+  border: 3px solid #FFF;
+}
+
+
+#occasion {
+  margin: 0 -500px;
+  padding: 50px 500px;
+  background: linear-gradient(-45deg, #ee7752, #F3227A, #154D9E, #23d5ab);
+  background-size: 400% 400%;
+  animation: gradientBG 15s ease infinite;
+}
+
+@keyframes gradientBG {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+.tagline {
+  margin-top: 0;
+  text-align: center;
+}
+
+.info-number {
+  font-size: 1.7em;
+  font-family: "Montserrat";
+  font-weight: 700;
+  color: #F3227A;
+  margin: 10px 0;
+}
+
+.info-label {
+  font-size: 0.7em;
+  font-weight: 100;
+  color: white;
 }

@@ -66,37 +66,7 @@
 
 
 
-@import url('https://fonts.googleapis.com/css?family=Playfair+Display:900');
-@font-face {
-  font-family: "Ilisarniq Light";
-  font-style: normal;
-  font-weight: 700;
-  src: local("Ilisarniq Light"), url(../fonts/Ilisarniq-Light.woff) format('woff');
-}
-@font-face {
-  font-family: "Ilisarniq Black";
-  font-style: normal;
-  font-weight: 700;
-  src: local("Ilisarniq Black"), url(../fonts/Ilisarniq-Black.woff) format('woff');
-}
-@font-face {
-  font-family: "Ilisarniq Bold";
-  font-style: normal;
-  font-weight: 300;
-  src: local("Ilisarniq Bold"), url(../fonts/Ilisarniq-Bold.woff) format('woff');
-}
-@font-face {
-  font-family: "Ilisarniq Regular";
-  font-style: normal;
-  font-weight: 800;
-  src: local("Ilisarniq Regular"), url(../fonts/Ilisarniq-Regular.woff) format('woff');
-}
-@font-face {
-  font-family: "Ilisarniq Italic";
-  font-style: normal;
-  font-weight: 400;
-  src: local("Ilisarniq Italic"), url(../fonts/Ilisarniq-Italic.woff) format('woff');
-}
+
 body {
 	background-color: #154D9E;
 	overflow-x: hidden;
@@ -169,8 +139,12 @@ h1 {
 	color: #FFF;
 	font-weight: normal!important;
 	font-size: 50px;
-	width: 50%;
 }
+
+#landing h1 {
+  width: 50%;
+}
+
 h2 {
 	font-family: "Ilisarniq Regular";
 	color: #FFF;
@@ -205,11 +179,11 @@ h2 {
 }
 label {
 	font-family: "Ilisarniq Regular";
-	color: #FFF;
+	color: rgba(255, 255, 255, 0.6);
 	display: block;
-	margin-bottom: 5px;
+	margin-bottom: 15px;
 	text-align: left;
-	width: 60%;
+  width: 60%;
 	margin-left: auto;
 	margin-right: auto;
 }
@@ -713,7 +687,7 @@ form {
     margin-bottom: -5px;
 }
 @media only screen and (max-width: 1004px) {
-    h1 {
+    #landing h1 {
         width: 85%;
     }
     input, label, .info, textarea {
@@ -733,7 +707,7 @@ form {
     }   
 }
 @media only screen and (max-width: 705px) {
-    h1 {
+    #landing h1 {
         text-align: center;
         margin-left: auto;
         margin-right: auto;
@@ -777,7 +751,7 @@ form {
     }
 }
 @media only screen and (max-width: 624px) {
-    h1 {
+    #landing h1 {
         width: 90%;
     }   
     h2 {
@@ -813,7 +787,7 @@ form {
         width: 30px;
         height: 30px;
     }
-    h1 {
+    #landing h1 {
         width: 90%;
     }
     .next {
@@ -838,7 +812,7 @@ form {
     #generatedurl {
         width: 80%;
     }   
-    h1 {
+    #landing h1 {
         font-size: 30px;
         margin-top: 40px;
     }
