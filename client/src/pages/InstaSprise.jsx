@@ -7,11 +7,11 @@ import moment from 'moment';
 const InstaSprise = (props) => {
   const { instaSprise, tag, date } = props;
   return(
-  <React.Fragment>
-    <h5>Profound Inspiration!</h5>
-    {instaSprise}
-    <p style={{fontSize:"15px", textDecoration:"italics", fontWeight:"100px"}}><em>{tag} {date}</em></p>
-  </React.Fragment>
+    <>
+      <h5>Profound Inspiration!</h5>
+      {instaSprise}
+      <p style={{fontSize:"15px", textDecoration:"italics", fontWeight:"100px"}}><em>{tag} {date}</em></p>
+    </>
 )};
 
 class InstaSprisePage extends React.Component {

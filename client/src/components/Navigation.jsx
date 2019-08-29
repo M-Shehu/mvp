@@ -1,51 +1,75 @@
 import React from 'react';
 import SpriseLogoWhite from '../assets/logos/Sprise-hollow-white.png';
+import SpriseLogoPink from '../assets/logos/Sprise-hollow-pink.png';
 import '../assets/styles/Navigation.css';
-import ErrorBoundary from './ErrorBoundary.jsx';
+import ErrorBoundary from './ErrorBoundary';
 
-const Navigation = (props) => {
+const Navigation = ({ type }) => {
   let Content = () => {
     return null
   }
-  if (props.type === 'landing') {
+  if (type === 'landing') {
     Content = () => (
-      <React.Fragment>
+      <>
         <li>
           <a href="/signin">Sign In</a>
         </li>
         <li>
           <a href="/signup">Sign Up</a>
         </li>
-      </React.Fragment>
+      </>
     )
   }
 
-  if (props.type === 'home') {
+  if (type === 'home') {
     Content = () => (
-      <React.Fragment>
+      <>
         <li>
           <a href="/signout">Sign Out</a>
         </li>
         <li>
-          <a href="/accounts">My Profile</a>
+          <a href="/accounts">
+            <p>
+              My Profile
+              <sub>Coming Soon!</sub>
+            </p>
+          </a>
         </li>
         <li>
-          <a href="/home">InstaSprise</a>
+          <a href="/home">
+            <p>
+              InstaSprise
+              <sub>Coming Soon!</sub>
+            </p>
+          </a>
         </li>
         <li>
-          <a href="/home">Sprise Hunt</a>
+          <a href="/home">
+            <p>
+              Sprise Hunt
+              <sub>Coming Soon!</sub>
+            </p>
+          </a>
         </li>
         <li>
-          <a href="/home">Sprise Direct</a>
+          <a href="/home">
+            <p>
+              Sprise Direct
+              <sub>Coming Soon!</sub>
+            </p>
+          </a>
         </li>
-      </React.Fragment>
+      </>
     )
   }
 
   return (
     <div className="nav-bar">
       <a href='/'>
-        <img className="nav-img" src={SpriseLogoWhite} height="50px"></img>
+        <div className="img-holder">
+          <img className="nav-img" src={SpriseLogoPink} alt='sprise-logo-white' height="40px" />
+          <img src={SpriseLogoWhite} alt='sprise-logo-pink' height="40px" />
+        </div>
       </a>
       <ul>
         <Content />
@@ -54,9 +78,9 @@ const Navigation = (props) => {
   )
 };
 
-const ErrorCaughtNav = () => (
+const ErrorCaughtNav = ({ type }) => (
   <ErrorBoundary>
-    <Navigation />
+    <Navigation type={type} />
   </ErrorBoundary>
 )
 
