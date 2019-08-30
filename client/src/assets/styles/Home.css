@@ -178,7 +178,7 @@
   display: flex;
   background-color: #011B33;
   margin: 0 -500px;
-  padding: 0 500px;
+  padding: 50px 500px;
   margin-bottom: -500px;
 }
 
@@ -295,4 +295,80 @@
   font-size: 0.7em;
   font-weight: 100;
   color: white;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.banner {
+  text-align: center;
+}
+
+.section {
+  flex-flow: row;
+}
+
+.info-tag {
+  margin: 30px;
+  text-align: center;
+}
+
+.let-know {
+  flex-flow: row;
+}
+
+@media only screen and (max-width: 1004px) {
+  .page h1 {
+    font-size: 3rem;
+  }
+  .let-know {
+    flex-flow: column-reverse;
+  }
+  .section {
+    flex-flow: column;
+  }
+  .first-half {
+    text-align: center;
+    align-items: center;
+  }
+  #occasion label {
+    text-align: center;
+  }
+  .last-section {
+    margin: 0 -50px;
+    padding: 50px;
+  }
+  #occasion {
+    margin: 0 -50px;
+    padding: 50px;
+  }
+
+  .spriseBox {
+    width: 100%;
+  }
+  
+  .sprise-info {
+    box-shadow: none;
+    border: none;
+  }
+
+  .sprise {
+    width: 100px;
+    height: 250px;
+  }
+
+  .sprise-name {
+    white-space: normal;
+  }
+
+  .sprise-list {
+    -moz-box-shadow:    inset 0 0 25px 3px #000000;
+    -webkit-box-shadow: inset 0 0 25px 3px #000000;
+    box-shadow:         inset 0 0 25px 3px #000000;
+  }
+}
+
+.setup {
+  padding: 50px 0;
 }
