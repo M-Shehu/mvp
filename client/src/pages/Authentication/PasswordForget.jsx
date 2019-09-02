@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 import { withFirebase } from '../../Firebase';
 import * as ROUTES from '../../constants/routes';
@@ -26,7 +27,8 @@ class PasswordForgetFormBase extends Component {
   onSubmit = event => {
     const { email } = this.state;
 
-    this.props.firebase
+    const { firebase } = this.props;
+    firebase
       .doPasswordReset(email)
       .then(() => {
         this.setState({ ...INITIAL_STATE });
@@ -51,7 +53,7 @@ class PasswordForgetFormBase extends Component {
       <form onSubmit={this.onSubmit}>
         <input
           name="email"
-          value={this.state.email}
+          value={email}
           onChange={this.onChange}
           type="text"
           placeholder="Email Address"
@@ -71,6 +73,13 @@ const PasswordForgetLink = () => (
     <Link to={ROUTES.PASSWORD_FORGET}>Forgot Password?</Link>
   </p>
 );
+
+PasswordForgetFormBase.propTypes = {
+  firebase: PropTypes.shape({
+    doPasswordReset: PropTypes.func
+  }).isRequired
+};
+
 
 export default PasswordForgetPage;
 

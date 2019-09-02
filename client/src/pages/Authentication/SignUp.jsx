@@ -1,10 +1,12 @@
+/* eslint-disable react/jsx-one-expression-per-line */
 import React, { Component } from 'react';
 import { Link, withRouter } from 'react-router-dom';
 import { compose } from 'recompose';
+import PropTypes from 'prop-types';
 
 import { withFirebase } from '../../Firebase';
 import * as ROUTES from '../../constants/routes';
-import Navigation from '../../components/Navigation.jsx';
+import Navigation from '../../global-components/Navigation';
 import '../../assets/styles/SignUp.css';
 
 const SignUpPage = () => (
@@ -39,22 +41,22 @@ class SignUpFormBase extends Component {
 
   onSubmit(event) {
     const { username, email, passwordOne } = this.state;
+    const { firebase, history } = this.props;
     event.preventDefault();
-    this.props.firebase
+    firebase
       .doCreateUserWithEmailAndPassword(email, passwordOne)
       .then(authUser => {
         // Create a user in your Firebase realtime database
-        return this.props.firebase
+        return firebase
           .user(authUser.user.uid)
           .set({
             username,
             email,
           });
       })
-      .then(authUser => {
-        console.log(authUser);
+      .then(() => {
         this.setState({ ...INITIAL_STATE });
-        this.props.history.push(ROUTES.HOME);
+        history.push(ROUTES.HOME);
       })
       .catch(error => {
         this.setState({ error });
@@ -127,11 +129,20 @@ class SignUpFormBase extends Component {
 
 const SignUpLink = () => (
   <p>
-    Don't have an account? <Link to={ROUTES.SIGN_UP}>Sign Up</Link>
+    Don&apos;t have an account? <Link to={ROUTES.SIGN_UP}>Sign Up</Link>
   </p>
 );
 
-
+SignUpFormBase.propTypes = {
+  firebase: PropTypes.shape({
+    doCreateUserWithEmailAndPassword: PropTypes.func,
+    user: PropTypes.func,
+    set: PropTypes.func
+  }).isRequired,
+  history: PropTypes.shape({
+    push: PropTypes.func
+  }).isRequired
+};
 
 const SignUpForm = compose(
   withRouter,

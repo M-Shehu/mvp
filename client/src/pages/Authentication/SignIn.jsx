@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { withRouter } from 'react-router-dom';
 import { compose } from 'recompose';
 
-import { SignUpLink } from './SignUp.jsx';
-import { PasswordForgetLink } from './PasswordForget.jsx';
+import { SignUpLink } from './SignUp';
+import { PasswordForgetLink } from './PasswordForget';
 import { withFirebase } from '../../Firebase';
 import * as ROUTES from '../../constants/routes';
-import Navigation from '../../components/Navigation.jsx';
+import Navigation from '../../global-components/Navigation';
 import '../../assets/styles/SignUp.css';
 
 const SignInPage = () => (
@@ -32,11 +33,12 @@ class SignInFormBase extends Component {
   onSubmit = event => {
     const { email, password } = this.state;
 
-    this.props.firebase
+    const { firebase, history } = this.props;
+    firebase
       .doSignInWithEmailAndPassword(email, password)
       .then(() => {
         this.setState({ ...INITIAL_STATE });
-        this.props.history.push(ROUTES.HOME);
+        history.push(ROUTES.HOME);
       })
       .catch(error => {
         this.setState({ error });
@@ -84,6 +86,17 @@ class SignInFormBase extends Component {
     );
   }
 }
+
+
+SignInFormBase.propTypes = {
+  firebase: PropTypes.shape({
+    doSignInWithEmailAndPassword: PropTypes.func
+  }).isRequired,
+  history: PropTypes.shape({
+    push: PropTypes.func
+  }).isRequired
+};
+
 
 const SignInForm = compose(
   withRouter,
