@@ -31,7 +31,7 @@
     "cors": "^2.8.5",
     "dotenv-webpack": "^1.7.0",
     "es6-promise": "^4.2.6",
-    "express": "^4.16.4",
+    "express": "^4.17.3",
     "express-graphql": "^0.8.0",
     "fetch-ponyfill": "^6.0.2",
     "firebase": "^5.11.1",
